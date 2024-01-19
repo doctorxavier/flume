@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+	<Match>
+        <Package name="~com\.bcp\.core\.audit\.flume\.sink\**.*"/>
+        <Bug pattern="CRLF_INJECTION_LOGS" />
+    </Match>
+    <Match>
+        <Class name="com.bcp.core.audit.flume.sink.MongoSink"/>
+        <Method name="configure" />
+        <Bug pattern="DM_DEFAULT_ENCODING" />
+    </Match>
+    <Match>
+        <Class name="com.bcp.core.audit.flume.sink.MongoSink"/>
+        <Bug pattern="MS_PKGPROTECT" />
+    </Match>
+    <Match>
+        <Class name="com.bcp.core.audit.flume.sink.MongoSink"/>
+        <Method name="configure" />
+        <Bug pattern="PATH_TRAVERSAL_OUT" />
+    </Match>
+    <Match>
+        <Class name="com.bcp.core.audit.flume.sink.MongoSink"/>
+        <Method name="stop" />
+        <Bug pattern="SWL_SLEEP_WITH_LOCK_HELD" />
+    </Match>
+    <Match>
+        <Class name="com.bcp.core.audit.flume.sink.MongoSink$MongoSinkThread"/>
+        <Method name="run" />
+        <Bug pattern="REC_CATCH_EXCEPTION" />
+    </Match>
+    <Match>
+        <Class name="com.bcp.core.audit.flume.sink.MongoSink$MongoSinkThread"/>
+        <Method name="run" />
+        <Bug pattern="ICAST_INTEGER_MULTIPLY_CAST_TO_LONG" />
+    </Match>
+</FindBugsFilter>
